@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>生日快乐</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      margin: 0;
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      background: linear-gradient(135deg, #ffd6e7, #fff1f7);
+      color: #333;
+    }
+    .page {
+      display: none;
+      min-height: 100vh;
+      padding: 40px 20px;
+      box-sizing: border-box;
+      text-align: center;
+    }
+    .page.active {
+      display: block;
+    }
+    h1 {
+      font-size: 28px;
+      margin-bottom: 20px;
+    }
+    p {
+      font-size: 17px;
+      line-height: 1.8;
+      margin: 12px 0;
+    }
+    button {
+      margin-top: 30px;
+      padding: 12px 28px;
+      font-size: 16px;
+      border: none;
+      border-radius: 30px;
+      background: #ff6fa5;
+      color: white;
+      cursor: pointer;
+    }
+    button:active {
+      transform: scale(0.97);
+    }
+    img {
+      width: 80%;
+      max-width: 300px;
+      border-radius: 12px;
+      margin: 15px 0;
+    }
+    .heart {
+      font-size: 40px;
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- 页面 1：封面 -->
+<div class="page active" id="page1">
+  <div class="heart">🎂</div>
+  <h1>给我最喜欢的宝贝</h1>
+  <p>今天是一个很重要的日子</p>
+  <button onclick="go(2)">点我一下</button>
+</div>
+
+<!-- 页面 2：祝福 -->
+<div class="page" id="page2">
+  <h1>生日快乐</h1>
+  <p>我想了很久，送你什么才合适。</p>
+  <p>除了礼物，也要一些仪式感呢。</p>
+  <p>最后决定，用我最认真的方式，<br>给你一个只属于你的小东西。</p>
+  <p>谢谢你出现在我的生活里。</p>
+  <button onclick="go(3)">继续</button>
+</div>
+
+<!-- 页面 3：照片 -->
+<div class="page" id="page3">
+  <h1>这是我们的第一张合照</h1>
+
+  <!-- 👉 改成你们的照片 -->
+  <img src="photo1.png">
+  <p>这张照片我一直很喜欢。</p>
+
+  <img src="photo2.jpg">
+  <p>每天的你，我都喜欢。</p>
+
+  <button onclick="go(4)">还有</button>
+</div>
+
+<!-- 页面 4：结尾 -->
+<div class="page" id="page4">
+  <div class="heart">❤️</div>
+  <h1>最后想对你说</h1>
+  <p>我们会永远在一起，</p>
+  <p>希望你记得，<br>有人真心希望你每天都开心。</p>
+  <p>生日快乐。</p>
+</div>
+
+<script>
+  function go(n) {
+    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+    document.getElementById('page' + n).classList.add('active');
+    window.scrollTo(0, 0);
+  }
+</script>
+
+</body>
+</html>
